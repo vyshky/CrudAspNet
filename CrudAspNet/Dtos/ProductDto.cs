@@ -7,12 +7,5 @@ namespace CrudAspNet.Dtos
         public string Id { get; set; }
         public string Name { get; set; }
 
-        public static ProductDto Map(ProductModel productModel) =>
-            new()
-            {
-                Id = productModel.Id,
-                Name = productModel.Name
-            };
-
     }
 }
