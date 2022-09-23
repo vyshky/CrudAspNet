@@ -3,7 +3,7 @@ using CrudAspNet.Models;
 
 namespace CrudAspNet.Mappers
 {
-    public class ProductMapper
+    public sealed class ProductMapper : IProductMapper
     {
         public ProductDto Map(ProductModel productModel) =>
             new()
