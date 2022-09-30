@@ -5,7 +5,7 @@ namespace CrudAspNet.Mappers
 {
     public sealed class ProductMapper : IProductMapper
     {
-        public ProductDto Map(ProductModel productModel) =>
+        public ProductViewModel Map(ProductModel productModel) =>
             new()
             {
                 Id = productModel.Id,

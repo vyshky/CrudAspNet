@@ -1,27 +1,23 @@
-﻿using CrudAspNet.Dtos;
-using CrudAspNet.Models;
-
-namespace CrudAspNet.Repositories
+﻿namespace Crud.Infrastructure.Repositories.Implementation
 {
     public class ProductRepository : IProductRepository
     {
-        IEnumerable<ProductViewModel> repository;
-        public ProductModel FindAll()
+        public void Delete()
         {
             throw new NotImplementedException();
         }
 
-        public ProductModel FindProductById(int n)
+        public void Insert()
         {
             throw new NotImplementedException();
         }
 
-        public ProductModel FindProductsByName(int n)
+        public void Select()
         {
             throw new NotImplementedException();
         }
 
-        public ProductModel FindProductsToLimit(int n)
+        public void Update()
         {
             throw new NotImplementedException();
         }

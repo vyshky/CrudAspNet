@@ -2,7 +2,7 @@
 
 namespace CrudAspNet.Dtos
 {
-    public sealed class ProductDto
+    public sealed class ProductViewModel
     {
         public string Id { get; set; }
         public string Name { get; set; }

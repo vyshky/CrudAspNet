@@ -3,7 +3,29 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudAspNet", "CrudAspNet\CrudAspNet.csproj", "{C9EC1F19-DC31-4D68-9E64-CBAD660A2810}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudAspNet", "CrudAspNet\CrudAspNet.csproj", "{C9EC1F19-DC31-4D68-9E64-CBAD660A2810}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{B5DB441E-6FAF-4B3F-977F-69F9AD0F7154}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B0A50291-C74B-4716-863C-E4807E4AF053}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{6DE2C8C2-3E36-433D-96BB-C511FD2F88B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.Infrastructure", "Crud.Infrastructure\Crud.Infrastructure.csproj", "{B0D5248E-5745-4709-947E-B69373C97AC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.Domain", "Crud.Domain\Crud.Domain.csproj", "{CC465110-AE39-493B-A9D9-A98D07912A0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{39A0FF16-C932-4407-95C9-455B650CC0B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8C180BED-B067-4BC6-8241-AA776F643342}"
+	ProjectSection(SolutionItems) = preProject
+		DDD-NET-Architecture-Diagram.png = DDD-NET-Architecture-Diagram.png
+		DDD_NLAYER_ARCHITECTURE_SMALL-V2.png = DDD_NLAYER_ARCHITECTURE_SMALL-V2.png
+		Info.txt = Info.txt
+		Layers-взаимодейстиве между слоями.png = Layers-взаимодейстиве между слоями.png
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crud.Application", "Crud.Application\Crud.Application.csproj", "{4A12DF9F-70B4-4BA3-B3D8-AE6A6DB991B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +37,27 @@ Global
 		{C9EC1F19-DC31-4D68-9E64-CBAD660A2810}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9EC1F19-DC31-4D68-9E64-CBAD660A2810}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9EC1F19-DC31-4D68-9E64-CBAD660A2810}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0D5248E-5745-4709-947E-B69373C97AC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0D5248E-5745-4709-947E-B69373C97AC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0D5248E-5745-4709-947E-B69373C97AC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0D5248E-5745-4709-947E-B69373C97AC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC465110-AE39-493B-A9D9-A98D07912A0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC465110-AE39-493B-A9D9-A98D07912A0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC465110-AE39-493B-A9D9-A98D07912A0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC465110-AE39-493B-A9D9-A98D07912A0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A12DF9F-70B4-4BA3-B3D8-AE6A6DB991B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A12DF9F-70B4-4BA3-B3D8-AE6A6DB991B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A12DF9F-70B4-4BA3-B3D8-AE6A6DB991B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A12DF9F-70B4-4BA3-B3D8-AE6A6DB991B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C9EC1F19-DC31-4D68-9E64-CBAD660A2810} = {B0A50291-C74B-4716-863C-E4807E4AF053}
+		{B0D5248E-5745-4709-947E-B69373C97AC4} = {6DE2C8C2-3E36-433D-96BB-C511FD2F88B2}
+		{CC465110-AE39-493B-A9D9-A98D07912A0C} = {B5DB441E-6FAF-4B3F-977F-69F9AD0F7154}
+		{4A12DF9F-70B4-4BA3-B3D8-AE6A6DB991B7} = {39A0FF16-C932-4407-95C9-455B650CC0B1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {59A753DB-32D3-48D9-97A0-CEF341D277C7}

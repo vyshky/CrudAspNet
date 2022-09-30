@@ -5,6 +5,6 @@ namespace CrudAspNet.Mappers
 {
     public interface IProductMapper
     {
-        ProductDto Map(ProductModel productModel);
+        ProductViewModel Map(ProductModel productModel);
     }
 }
