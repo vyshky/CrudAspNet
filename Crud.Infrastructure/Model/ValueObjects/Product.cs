@@ -3,7 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Crud.Infrastructure.Model.ValueObjects
 {
-    public sealed class Product : ValueObject<Address>
+    [Owned]
+    public sealed class Product : ValueObject<Product>
     {
         public string Name { get; set; }
     }

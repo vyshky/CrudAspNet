@@ -6,8 +6,7 @@ namespace Crud.Infrastructure.Model.Entities
 {
     public sealed class Basket : Entity // ValueObject(Model)
     {
-        public long Id { get; set; }
-        [NotMapped]
+        public long Id { get; set; }        
         public List<Product> Products { get; set; }
     }
 }
