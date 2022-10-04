@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Crud.Infrastructure.SyperType
 {
-    public class ValueObject <T>
+    public class ValueObject <T>  // класс проверяет Модели(классы в папке Model) по значению
     {
     }
 }
