@@ -8,6 +8,9 @@ namespace Crud.Infrastructure.Persistence
     {
         public DbSet<Buyer> Buyer { get; set; }
         public DbSet<Basket> Basket { get; set; }
+
+        public DbSet<Product> Product { get; set; }
+        //public DbSet<Address> Address { get; set; }
         public OrmContext() => Database.EnsureCreated();
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
