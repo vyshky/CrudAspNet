@@ -15,6 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		DDD_NLAYER_ARCHITECTURE_SMALL-V2.png = DDD_NLAYER_ARCHITECTURE_SMALL-V2.png
 		Info.txt = Info.txt
 		Layers-взаимодейстиве между слоями.png = Layers-взаимодейстиве между слоями.png
+		Архитектура.png = Архитектура.png
 		гайд по формату файлов.png = гайд по формату файлов.png
 	EndProjectSection
 EndProject
@@ -22,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crud.Application", "Crud.Ap
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F6110BE5-0A8D-4CFA-AB1E-6B4D8B3C90F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest2", "ConsoleTest2\ConsoleTest2.csproj", "{52AD30F9-919A-47DD-A605-11CE8983AC25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTest2", "ConsoleTest2\ConsoleTest2.csproj", "{52AD30F9-919A-47DD-A605-11CE8983AC25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
