@@ -1,50 +1,12 @@
-﻿using Crud.Infrastructure.Model.Entities;
-using Crud.Infrastructure.Model.ValueObjects;
-using Crud.Infrastructure.Persistence;
+﻿using Crud.Infrastructure.Repositories.Implementation;
 
-// Добавить продукты
-//using (OrmContext db = new OrmContext())
-//{
-//    //создаем Products
-//    List<Product> product = new List<Product>()
-//            {
-//                new() { Name = "Монитор" },
-//                new() { Name = "Мышка" },
-//                new() { Name = "Автомобиль" },
-//                new() { Name = "Клавиатура" },
-//                new() { Name = "Ананас" },
-//                new() { Name = "Банан" },
-//            };
-//    // добавляем их в бд
-//    db.Product.AddRange(product);
-//    db.SaveChanges();
-//}
+AuthenticationRepository repository = new AuthenticationRepository();
+repository.AutorizationUser("Alexandr", "1234456");
+repository.CreateUser("Alexandr5", "0000");
+//repository.UpdatePassword("123123124", "23123123", "23123123");
+//repository.DeleteUser("123123124", "23123123");
 
 
-// Добавить покупателя
-using (OrmContext db = new OrmContext())
-{    
-    Buyer buyer = new Buyer
-    {
-        Id = Random.Shared.Next(),
-        Address = new Address() { City = "Moscow", ZipCode = 666666 },
-        Basket = new Basket()
-        {
-            Id = Random.Shared.Next(),
-            ProductsId = new List<long>()
-            {
-                1,
-                2,
-                3,
-                4,
-                5,
-                6,
-            }
-        }
-    };
-    db.Buyer.AddRange(buyer);
-    db.SaveChanges();
-}
 
 //using (OrmContext db = new OrmContext())
 //{
@@ -56,4 +18,3 @@ using (OrmContext db = new OrmContext())
 //        Console.WriteLine($"{u.Name}");
 //    }
 //}
-
