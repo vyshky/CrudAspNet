@@ -1,13 +1,15 @@
-using CrudAspNet.Repositories;
+using Crud.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddSingleton<IProductRepository, ProductRepository>();
-
+builder.Services.AddScoped<IGeoIpService, GeoIpService>();
+builder.Services.AddHttpClient();
+//builder.Services.AddSingleton<GeoIpService>();
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

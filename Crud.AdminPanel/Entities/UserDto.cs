@@ -1,8 +1,6 @@
-﻿using Crud.Infrastructure.SyperType;
-
-namespace Crud.Infrastructure.Model.Entities
+﻿namespace Crud.Infrastructure.Model.Entities
 { 
-    public class Authentication : Entity
+    public class UserDto
     {
         public Guid Id { get; set; }
         public string Login { get; set; }

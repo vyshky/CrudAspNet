@@ -1,4 +1,4 @@
-namespace CrudAspNet.Models
+namespace Crud.Web.Models
 {
     public class ErrorViewModel
     {

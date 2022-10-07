@@ -8,7 +8,11 @@
 
   <ItemGroup>
     <Folder Include="Mappers\" />
-    <Folder Include="Services\" />
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Crud.Domain\Crud.Domain.csproj" />
   </ItemGroup>
 
 </Project>

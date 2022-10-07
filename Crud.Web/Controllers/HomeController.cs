@@ -1,16 +1,21 @@
-﻿using CrudAspNet.Models;
+﻿using Crud.Web.Models;
+using Crud.Web.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace CrudAspNet.Controllers
+namespace Crud.Web.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        IGeoIpService service;
+        GeoViewModel geo;
+        public HomeController(ILogger<HomeController> logger, IGeoIpService service)
         {
             _logger = logger;
+            geo = new GeoViewModel();
+            this.service = service;
         }
 
         public IActionResult Index()
@@ -21,6 +26,13 @@ namespace CrudAspNet.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public async Task<IActionResult> GeoIp()
+        {
+            //geo.Ip = await service.GetIp();
+            geo = await service.GetGeo();
+            return View(geo);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

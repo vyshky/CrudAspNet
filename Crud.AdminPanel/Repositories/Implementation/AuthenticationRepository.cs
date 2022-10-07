@@ -1,6 +1,5 @@
 ﻿using Crud.Infrastructure.Model.Entities;
 using Crud.Infrastructure.Persistence;
-using System.Diagnostics;
 
 namespace Crud.Infrastructure.Repositories.Implementation
 {
@@ -10,18 +9,14 @@ namespace Crud.Infrastructure.Repositories.Implementation
         {
             using (OrmContext db = new OrmContext())
             {
-                var user = from u in db.Authentication
+                var user = from u in db.Users
                            where u.Login.Equals(login)
                            where u.Password.Equals(password)
                            select u;
                 if (user.Any())
-                {
                     return true;
-                }
                 else
-                {
                     return false;
-                }
             }
         }
 
@@ -29,7 +24,7 @@ namespace Crud.Infrastructure.Repositories.Implementation
         {
             using (OrmContext db = new OrmContext())
             {
-                var user = from u in db.Authentication
+                var user = from u in db.Users
                            where u.Login.Equals(login)
                            select u;
 
@@ -39,12 +34,12 @@ namespace Crud.Infrastructure.Repositories.Implementation
                 }
                 else
                 {
-                    Authentication newUser = new Authentication()
+                    UserDto newUser = new UserDto()
                     {
                         Login = login,
                         Password = password
                     };
-                    db.Authentication.Add(newUser);
+                    db.Users.Add(newUser);
                     db.SaveChanges();
                     return true;
                 }
@@ -55,13 +50,13 @@ namespace Crud.Infrastructure.Repositories.Implementation
         {
             using (OrmContext db = new OrmContext())
             {
-                var user = from u in db.Authentication
+                var user = from u in db.Users
                            where u.Login.Equals(login)
                            where u.Password.Equals(password)
                            select u;
                 if (user.Any())
                 {
-                    db.Authentication.Remove(user.First());
+                    db.Users.Remove(user.First());
                     db.SaveChanges();
                     return true;
                 }
@@ -78,16 +73,16 @@ namespace Crud.Infrastructure.Repositories.Implementation
 
             using (OrmContext db = new OrmContext())
             {
-                var user = (from u in db.Authentication
-                            where u.Login.Equals(login)
-                            where u.Password.Equals(password)
-                            select u);
+                var user = from u in db.Users
+                           where u.Login.Equals(login)
+                           where u.Password.Equals(password)
+                           select u;
                 if (user.Any())
                 {
                     //var updateUser = user.Select(x => new Authentication() { Id = x.Id, Login = x.Login, Password = newPassword }).First();     
                     var updateUser = user.First();
                     updateUser.Password = newPassword;
-                    db.Authentication.Update(updateUser);
+                    db.Users.Update(updateUser);
                     db.SaveChanges();
                     return true;
                 }

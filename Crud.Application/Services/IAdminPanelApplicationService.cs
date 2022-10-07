@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Crud.Infrastructure.Bases
+namespace Crud.Application.Services
 {
-    public class ObjectContext
+    public interface IAdminPanelApplicationService
     {
     }
 }

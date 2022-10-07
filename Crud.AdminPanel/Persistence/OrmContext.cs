@@ -5,7 +5,7 @@ namespace Crud.Infrastructure.Persistence
 {
     public sealed class OrmContext : DbContext  // POCO файл
     {
-        public DbSet<Authentication> Authentication { get; set; }
+        public DbSet<UserDto> Users { get; set; }
         public OrmContext() => Database.EnsureCreated();
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
