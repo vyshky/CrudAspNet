@@ -10,7 +10,6 @@ namespace Crud.Web.Services
         {
             httpClient = httpClientFactory.CreateClient();
         }
-
         public async Task<string> GetIp()
         {
             string url = "https://get.geojs.io/v1/ip";
@@ -18,7 +17,6 @@ namespace Crud.Web.Services
             var ip = await respons.Content.ReadAsStringAsync();
             return ip.TrimEnd('\n');
         }
-
         public async Task<GeoViewModel> GetGeo()
         {
             var ip = await GetIp();

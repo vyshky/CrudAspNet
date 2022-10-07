@@ -30,7 +30,6 @@ namespace Crud.Web.Controllers
 
         public async Task<IActionResult> GeoIp()
         {
-            //geo.Ip = await service.GetIp();
             geo = await service.GetGeo();
             return View(geo);
         }
