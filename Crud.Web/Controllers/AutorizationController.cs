@@ -13,15 +13,16 @@ namespace Crud.Web.Controllers
             this.logger = logger;
             this.service = service;
         }
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return View(service.User);
         }
 
         [HttpPost]
-        public ActionResult AdminPanel(string login, string password)
+        public async Task<IActionResult> AdminPanel(string login, string password)
         {
-            return View(service.AutorizationUser(login, password));
+            var user = service.AutorizationUser(login, password);
+            return View(user);
         }
     }
 }

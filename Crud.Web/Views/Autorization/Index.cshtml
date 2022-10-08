@@ -1,20 +1,27 @@
-﻿@{	
+﻿@{
 	ViewData["Title"] = "Autorization";
 }
 
 @model AdminPanelViewModel
 
 @if (!@Model.IsLoggedIn)
-{	
+{
 	<form method="post" asp-controller="Autorization" asp-action="AdminPanel">
-		<lable>Login:</lable>
-		<input asp-for="Login"/>
-		<lable>Password:</lable>
-		<input asp-for="Password"/>
-		<input type="submit" value="Перейти в личный кабинет" class="form-control btn btn-primary" />
+		<div class="form-group">
+			<lable>Login:</lable>
+			<input required name="login" type="text" class="form-control" placeholder="Login" aria-label="Login">
+		</div>
+		<div class="form-group">
+			<lable>Password:</lable>
+			<input required name="password" type="text" class="form-control" placeholder="Password" aria-label="Password">
+		</div>
+		<div class="col-6">
+			<input type="submit" value="Перейти в личный кабинет" class="form-control btn btn-primary" />
+		</div>
 	</form>
 }
 else
 {
 	<h1>Welcom @Model.Login</h1>
 }
+
