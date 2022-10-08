@@ -1,0 +1,12 @@
+﻿@{
+	ViewData["Title"] = "Admin Panel";
+}
+@model AdminPanelViewModel
+
+@if (Model.IsLoggedIn)
+{
+	<h1>Спасибо за авторизацию</h1>
+}
+else {
+	<h1>Логин или пароль не совпадает</h1>
+}

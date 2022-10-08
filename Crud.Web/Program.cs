@@ -1,3 +1,4 @@
+using Crud.Application.Services.Login;
 using Crud.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,8 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IGeoIpService, GeoIpService>();
+builder.Services.AddScoped<IAutorizationService, AutorizationService>();
 builder.Services.AddHttpClient();
-//builder.Services.AddSingleton<GeoIpService>();
 
 var app = builder.Build();
 

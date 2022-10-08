@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Crud.AdminPanel\Crud.Infrustructure.csproj" />
+    <ProjectReference Include="..\Crud.GeoApiLayer\Crud.GeoApiLayer.csproj" />
   </ItemGroup>
 
 </Project>

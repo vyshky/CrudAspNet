@@ -1,31 +1,29 @@
 ﻿using Crud.Web.Models;
 using System.Text.Json;
 
-namespace Crud.Web.Services
+namespace Crud.GeoApiLayer
 {
-    public class GeoIpService : IGeoIpService
-    {        
-        private readonly HttpClient httpClient;        
-        public GeoIpService(IHttpClientFactory httpClientFactory)
+    public class GeoRepositoryService
+    {
+        private readonly HttpClient httpClient;
+        public GeoRepositoryService(IHttpClientFactory httpClientFactory)
         {
             httpClient = httpClientFactory.CreateClient();
-            httpClient = new HttpClient();
         }
-        public async Task<string> GetIp()
+        public async Task<string> GetIpAsync()
         {
             string url = "https://get.geojs.io/v1/ip";
             var respons = await httpClient.GetAsync(url);
             var ip = await respons.Content.ReadAsStringAsync();
             return ip.TrimEnd('\n');
         }
-        public async Task<GeoViewModel> GetGeo()
+        public async Task<GeoDto> GetGeoAsync(string ip)
         {
-            var ip = await GetIp();
-            GeoViewModel result;
+            GeoDto result;
             string url = $"https://get.geojs.io/v1/ip/geo/{ip}.json";
             var respons = await httpClient.GetAsync(url);
             var content = await respons.Content.ReadAsStringAsync();
-            result = JsonSerializer.Deserialize<GeoViewModel>(content);
+            result = JsonSerializer.Deserialize<GeoDto>(content);
             return result;
         }
     }

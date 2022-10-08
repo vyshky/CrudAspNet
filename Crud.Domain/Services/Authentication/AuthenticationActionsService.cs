@@ -1,27 +1,29 @@
 ﻿using Crud.Domain.Entities;
 using Crud.Infrastructure.Repositories;
+using Crud.Infrastructure.Repositories.Implementation;
 
 namespace Crud.Domain.Services.Authentication
 {
-    public class AdminPanelDomainService : IAdminPanelDomainService
+    public class AuthenticationActionsService : IAuthenticationActionsService
     {
         private readonly IAuthenticationRepository repository;
         public bool IsLoggedIn { get; set; }
         private User _user;
-        public AdminPanelDomainService(IAuthenticationRepository repository)
-        {
-            this.repository = repository;
+        public AuthenticationActionsService()
+        {           
+            this.repository = new AuthenticationRepository();
             _user = new User();
         }
-        public void AutorizationUser(string login, string password)
+        public bool AutorizationUser(string login, string password)
         {
             if (!IsLoggedIn)
             {
                 _user.Login = login;
                 _user.Password = password;
                 IsLoggedIn = repository.AutorizationUser(login, password);
-                //TODO :: получить информацию из api web3Storage
+                return IsLoggedIn;
             }
+            return false;
         }
         public void CreateUser(string login, string password)
         {

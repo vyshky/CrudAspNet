@@ -1,8 +1,8 @@
 ﻿using System.Text.Json.Serialization;
 
 namespace Crud.Web.Models
-{
-    public class GeoViewModel
+{   
+    public class GeoDto
     {
         [JsonPropertyName("organization_name")]
         public string OrganizationName { get; set; }
